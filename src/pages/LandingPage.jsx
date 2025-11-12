@@ -1,9 +1,12 @@
 import React from 'react';
+import DashBanner from '../components/Dash/DashBanner';
+import Dash from '../components/Dash/Dash';
 
 const LandingPage = () => {
     return (
         <div>
-            Landing Page
+            {/* <DashBanner></DashBanner> */}
+            <Dash />
         </div>
     );
 };
