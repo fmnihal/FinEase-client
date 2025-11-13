@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MonthlyBudget = () => {
+const Budget = () => {
     return (
         <div className='w-1/2'>
             Monthly Budget
@@ -8,4 +8,4 @@ const MonthlyBudget = () => {
     );
 };
 
-export default MonthlyBudget;
+export default Budget;

@@ -2,9 +2,9 @@ import React from 'react';
 import DashBanner from './DashBanner';
 import IncomeVsExpenseTrend from './IncomeVsExpenseTrend';
 import SpendingByCategory from './SpendingByCategory';
-import MonthlyBudget from '../Budgets/MonthlyBudget';
-import Goals from '../Goals/Goals';
-import Tranx from '../Transactions/Tranx';
+import Budget from './Budget';
+import Goals from './Goals';
+import Tranx from './Tranx';
 
 const Dash = () => {
     return (
@@ -15,7 +15,7 @@ const Dash = () => {
                 <IncomeVsExpenseTrend />
             </div>
             <div className='flex gap-5'>
-                <MonthlyBudget />
+                <Budget />
                 <Goals />
             </div>
             <Tranx />

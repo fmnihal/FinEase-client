@@ -6,9 +6,20 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import App from './App';
 
+import PrivateRoute from './components/routes/PrivateRoute';
+import GuestRoute from './components/routes/GuestRoute';
+
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 
+import AuthProvider from './context/AuthProvider';
+import RegisterPage from './pages/RegisterPage';
+
+import Tranx from './components/Tranx';
+import Goals from './components/Goals';
+import Dash from './components/Dash';
+import Reports from './components/Reports';
+import Settings from './components/Settings';
 
 
 const router = createBrowserRouter([
@@ -17,13 +28,22 @@ const router = createBrowserRouter([
     element: <App></App>,
     children: [
       {path: "/", element: <LandingPage></LandingPage>},
-      {path: "/login", element: <LoginPage></LoginPage>},
+      {path: "/login", element: <GuestRoute><LoginPage></LoginPage></GuestRoute>},
+      { path: "/register", element: <GuestRoute><RegisterPage></RegisterPage></GuestRoute> },
+      // 
+      { path: "/dashboard", element: <PrivateRoute><Dash></Dash></PrivateRoute> },
+      { path: "/transactions", element: <PrivateRoute><Tranx></Tranx></PrivateRoute> },
+      { path: "/goals", element: <PrivateRoute><Goals></Goals></PrivateRoute> },
+      { path: "/reports", element: <PrivateRoute><Reports></Reports></PrivateRoute> },
+      { path: "/settings", element: <PrivateRoute><Settings></Settings></PrivateRoute> },
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

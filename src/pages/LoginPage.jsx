@@ -1,28 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
 
-const LoginPage = () => {
-    return (
-        <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col">
-                <div className="text-center">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <div className="card-body">
-                        <fieldset className="fieldset">
-                            <label className="label">Email</label>
-                            <input type="email" className="input" placeholder="Email" />
-                            <label className="label">Password</label>
-                            <input type="password" className="input" placeholder="Password" />
-                            <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
+export default function LoginPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { loginUser, loginWithGoogle } = useAuth();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await loginUser(email, password);
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err.message);
+      console.error(err);
+    }
+  };
+  const handleGoogleLogin = async () => {
+    try {
+      await loginWithGoogle();
+      navigate('/dashboard');
+    } catch (err) {
+      setError(err.message);
+      console.error(err);
+    }
+  }
+  return (
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Login</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-gray-700">Email</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full px-4 py-2 border rounded-lg" required />
         </div>
-    );
-};
-
-export default LoginPage;
+        <div>
+          <label className="block text-gray-700">Password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-2 border rounded-lg" required />
+        </div>
+        <button type="submit" className="w-full bg-teal-600 text-white py-2 rounded-lg font-semibold hover:bg-teal-700">Login</button>
+      </form>
+      <button onClick={handleGoogleLogin} className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 mt-4">Login with Google</button>
+      {error && <p className="text-red-500 text-center mt-4">{error}</p>}
+      <p className="text-center text-gray-600 mt-4">New here? <Link to="/register" className="text-teal-600 hover:underline">Create an account</Link></p>
+    </div>
+  );
+}
