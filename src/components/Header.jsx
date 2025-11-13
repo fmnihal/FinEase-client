@@ -46,7 +46,8 @@ export default function Header() {
             <>
               <ul className="flex space-x-6">
                 <NavLinkItem to="/dashboard">Dashboard</NavLinkItem>
-                <NavLinkItem to="/transactions">Transactions</NavLinkItem>
+                <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
+                <NavLinkItem to="/add-transaction">Add Transactions</NavLinkItem>
                 <NavLinkItem to="/reports">Reports</NavLinkItem>
                 <NavLinkItem to="/settings">Settings</NavLinkItem>
               </ul>
@@ -80,7 +81,7 @@ export default function Header() {
             <ul className="flex flex-col space-y-2 px-5">
               <NavLinkItem to="/dashboard">Dashboard</NavLinkItem>
               <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
-              <NavLinkItem to="/add-transactions">Add Transactions</NavLinkItem>
+              <NavLinkItem to="/add-transaction">Add Transactions</NavLinkItem>
               <NavLinkItem to="/reports">Reports</NavLinkItem>
               <NavLinkItem to="/settings">Settings</NavLinkItem>
               <li>
