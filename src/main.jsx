@@ -15,7 +15,8 @@ import LoginPage from './pages/LoginPage';
 import AuthProvider from './context/AuthProvider';
 import RegisterPage from './pages/RegisterPage';
 
-import Tranx from './components/Tranx';
+import MyTranx from './components/MyTranx';
+import AddTranx from './components/AddTranx';
 import Goals from './components/Goals';
 import Dash from './components/Dash';
 import Reports from './components/Reports';
@@ -32,7 +33,8 @@ const router = createBrowserRouter([
       { path: "/register", element: <GuestRoute><RegisterPage></RegisterPage></GuestRoute> },
       // 
       { path: "/dashboard", element: <PrivateRoute><Dash></Dash></PrivateRoute> },
-      { path: "/transactions", element: <PrivateRoute><Tranx></Tranx></PrivateRoute> },
+      { path: "/my-transactions", element: <PrivateRoute><MyTranx></MyTranx></PrivateRoute> },
+      { path: "/add-transactions", element: <PrivateRoute><AddTranx></AddTranx></PrivateRoute> },
       { path: "/goals", element: <PrivateRoute><Goals></Goals></PrivateRoute> },
       { path: "/reports", element: <PrivateRoute><Reports></Reports></PrivateRoute> },
       { path: "/settings", element: <PrivateRoute><Settings></Settings></PrivateRoute> },

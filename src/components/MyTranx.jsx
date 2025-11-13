@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tranx = () => {
+const MyTranx = () => {
     return (
         <div>
             Transactions
@@ -8,4 +8,4 @@ const Tranx = () => {
     );
 };
 
-export default Tranx;
+export default MyTranx;

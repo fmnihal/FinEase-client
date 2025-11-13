@@ -4,7 +4,7 @@ import IncomeVsExpenseTrend from './IncomeVsExpenseTrend';
 import SpendingByCategory from './SpendingByCategory';
 import Budget from './Budget';
 import Goals from './Goals';
-import Tranx from './Tranx';
+import Tranx from './MyTranx';
 
 const Dash = () => {
     return (
