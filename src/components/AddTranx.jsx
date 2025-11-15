@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthProvider';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function AddTranx() {
   const { user } = useAuth();
@@ -33,6 +34,7 @@ export default function AddTranx() {
         date,
       };
       await axiosSecure.post('/add-transaction', transactionData);
+      toast.success('Transaction added successfully!');
       navigate('/my-transactions');
     } catch (err) {
       console.error(err);
@@ -100,17 +102,6 @@ export default function AddTranx() {
             className="w-full px-4 py-3 border rounded-lg"
             required
           />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">User Name</label>
-            <input type="text" value={user?.displayName || 'Loading...'} className="w-full px-4 py-3 bg-gray-100 border rounded-lg" readOnly />
-          </div>
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">User Email</label>
-            <input type="email" value={user?.email || 'Loading...'} className="w-full px-4 py-3 bg-gray-100 border rounded-lg" readOnly />
-          </div>
         </div>
         
         {error && <p className="text-red-500 text-center">{error}</p>}

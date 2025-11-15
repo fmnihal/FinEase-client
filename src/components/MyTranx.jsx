@@ -74,10 +74,10 @@ export default function MyTranx() {
               </div>
               
               <div className="flex justify-end space-x-2 border-t pt-4">
-                <Link to={`/transaction/${t._id}`} className="p-2 hover:bg-gray-100 rounded-full" title="View Details"><Eye className="h-5 w-5 text-blue-500" /></Link>
-                <Link to={`/transaction/update/${t._id}`} className="p-2 hover:bg-gray-100 rounded-full" title="Update"><Edit className="h-5 w-5 text-yellow-500" /></Link>
-                <button onClick={() => handleDelete(t._id)} className="p-2 hover:bg-gray-100 rounded-full" title="Delete"><Trash2 className="h-5 w-5 text-red-500" /></button>
-              </div>
+                  <Link to={`/transaction/${t._id}`} className="px-3 py-1 text-sm font-medium text-blue-600 rounded-md hover:bg-blue-50">View Details</Link>
+                  <Link to={`/transaction/update/${t._id}`} className="px-3 py-1 text-sm font-medium text-yellow-600 rounded-md hover:bg-yellow-50">Update</Link>
+                  <button onClick={() => handleDelete(t._id)} className="px-3 py-1 text-sm font-medium text-red-600 rounded-md hover:bg-red-50 hover: cursor-pointer">Delete</button>
+                </div>
             </div>
           ))
         )}

@@ -20,9 +20,9 @@ import AddTranx from './components/AddTranx';
 import DetailsTranx from './components/DetailsTranx';
 import UpdateTranx from './components/UpdateTranx';
 import Goals from './components/Goals';
-import Dash from './components/Dash';
+import HomePage from './pages/HomePage';
 import Reports from './components/Reports';
-import Settings from './components/Settings';
+import Profile from './components/Profile';
 
 
 const router = createBrowserRouter([
@@ -34,12 +34,12 @@ const router = createBrowserRouter([
       {path: "/login", element: <GuestRoute><LoginPage></LoginPage></GuestRoute>},
       { path: "/register", element: <GuestRoute><RegisterPage></RegisterPage></GuestRoute> },
       
-      { path: "/dashboard", element: <PrivateRoute><Dash></Dash></PrivateRoute> },
+      { path: "/home", element: <PrivateRoute><HomePage></HomePage></PrivateRoute> },
       { path: "/my-transactions", element: <PrivateRoute><MyTranx></MyTranx></PrivateRoute> },
       { path: "/add-transaction", element: <PrivateRoute><AddTranx></AddTranx></PrivateRoute> },
       { path: "/goals", element: <PrivateRoute><Goals></Goals></PrivateRoute> },
       { path: "/reports", element: <PrivateRoute><Reports></Reports></PrivateRoute> },
-      { path: "/settings", element: <PrivateRoute><Settings></Settings></PrivateRoute> },
+      { path: "/profile", element: <PrivateRoute><Profile></Profile></PrivateRoute> },
       { path: "/transaction/:id", element: <PrivateRoute><DetailsTranx /></PrivateRoute> },
       { path: "/transaction/update/:id", element: <PrivateRoute><UpdateTranx /></PrivateRoute> },
     ]

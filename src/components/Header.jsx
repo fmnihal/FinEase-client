@@ -45,20 +45,22 @@ export default function Header() {
           ) : user ? (
             <>
               <ul className="flex space-x-6">
-                <NavLinkItem to="/dashboard">Dashboard</NavLinkItem>
+                <NavLinkItem to="/home">Home</NavLinkItem>
                 <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
-                <NavLinkItem to="/add-transaction">Add Transactions</NavLinkItem>
+                <NavLinkItem to="/add-transaction">Add Transaction</NavLinkItem>
                 <NavLinkItem to="/reports">Reports</NavLinkItem>
-                <NavLinkItem to="/settings">Settings</NavLinkItem>
+                {/* <NavLinkItem to="/settings">Settings</NavLinkItem> */}
+                <NavLinkItem to="/profile"><UserRoundPen size={30} /></NavLinkItem>
               </ul>
               <div className="flex items-center space-x-3">
-                <span className="text-sm text-gray-600 flex gap-2 items-center"><UserRoundPen size={30} /> Hi, {user.displayName || user.email.split('@')[0]}</span><button onClick={handleLogout} className="bg-red-500 text-white font-bold p-2 rounded-full hover:bg-red-600 transition duration-300" title="Logout"><LogOut className="h-5 w-5" /></button>
+                {/* <span className="text-sm text-gray-600 flex gap-2 items-center"><UserRoundPen size={30} /> Hi, {user.displayName || user.email.split('@')[0]}</span> */}
+                <button onClick={handleLogout} className="bg-red-500 text-white font-bold p-2 rounded-full hover:bg-red-600 hover:cursor-pointer transition duration-300" title="Logout"><LogOut className="h-5 w-5" /></button>
               </div>
             </>
           ) : (
             <div className="flex items-center space-x-3">
-              <Link to="/login" className="text-gray-600 font-medium hover:text-teal-600">Login</Link>
-              <Link to="/register" className="bg-teal-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-teal-700 transition duration-300">Sign Up</Link>
+              <Link to="/login" className="text-gray-600 font-medium hover:text-teal-600 hover:cursor-pointer">Login</Link>
+              <Link to="/register" className="bg-teal-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-teal-700 transition duration-300 hover:cursor-pointer">Sign Up</Link>
             </div>
           )}
         </div>
@@ -79,22 +81,22 @@ export default function Header() {
             <span className="block text-center text-gray-500 px-4">Loading...</span>
           ) : user ? (
             <ul className="flex flex-col space-y-2 px-5">
-              <NavLinkItem to="/dashboard">Dashboard</NavLinkItem>
+              <NavLinkItem to="/home">Home</NavLinkItem>
               <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
-              <NavLinkItem to="/add-transaction">Add Transactions</NavLinkItem>
+              <NavLinkItem to="/add-transaction">Add Transaction</NavLinkItem>
               <NavLinkItem to="/reports">Reports</NavLinkItem>
-              <NavLinkItem to="/settings">Settings</NavLinkItem>
+              <NavLinkItem to="/profile">Profile</NavLinkItem>
               <li>
                 <button onClick={() => {
                     handleLogout();
                     closeMobileMenu();
-                  }} className="w-full text-left py-2 px-3 rounded text-red-600 hover:bg-red-50">Logout</button>
+                  }} className="w-full text-left py-2 px-3 rounded text-red-600 hover:bg-red-50 hover:cursor-pointer">Logout</button>
               </li>
             </ul>
           ) : (
             <div className="flex flex-col space-y-3 px-5">
-              <Link to="/login" onClick={closeMobileMenu} className="block text-center text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-100">Login</Link>
-              <Link to="/register" onClick={closeMobileMenu} className="block text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition duration-300">Sign Up</Link>
+              <Link to="/login" onClick={closeMobileMenu} className="block text-center text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 hover:cursor-pointer">Login</Link>
+              <Link to="/register" onClick={closeMobileMenu} className="block text-center bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition duration-300 hover:cursor-pointer">Sign Up</Link>
             </div>
           )}
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
+import { toast } from 'react-toastify';
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -17,7 +18,8 @@ export default function RegisterPage() {
       const result = await registerUser(email, password);
       await updateUserProfile(name, null);
       console.log('Registered!', result.user);
-      navigate('/dashboard');
+      toast("Registered successfully!");
+      navigate('/home');
     } catch (err) {
       setError(err.message);
       console.error(err);
@@ -26,7 +28,8 @@ export default function RegisterPage() {
   const handleGoogleLogin = async () => {
     try {
       await loginWithGoogle();
-      navigate('/dashboard');
+      toast("Registered successfully!");
+      navigate('/home');
     } catch (err) {
       setError(err.message);
       console.error(err);
