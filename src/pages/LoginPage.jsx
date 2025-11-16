@@ -43,9 +43,9 @@ export default function LoginPage() {
                 <label className="block text-gray-700">Password</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-2 border rounded-lg" required />
             </div>
-            <button type="submit" className="w-full bg-teal-600 text-white py-2 rounded-lg font-semibold hover:bg-teal-700">Login</button>
+            <button type="submit" className="w-full bg-teal-600 text-white py-2 rounded-lg font-semibold hover:bg-teal-700 hover:cursor-pointer">Login</button>
         </form>
-        <button onClick={handleGoogleLogin} className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 mt-4">Login with Google</button>
+        <button onClick={handleGoogleLogin} className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 mt-4 hover:cursor-pointer">Login with Google</button>
         {error && <p className="text-red-500 text-center mt-4">{error}</p>}
         <p className="text-center text-gray-600 mt-4">New here? <Link to="/register" className="text-teal-600 hover:underline">Create an account</Link></p>
     </div>

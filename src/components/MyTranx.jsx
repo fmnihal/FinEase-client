@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
 import { Eye, Edit, Trash2, Plus } from 'lucide-react';
+import LoadingSpinner from './LoadingSpinner';
 
 export default function MyTranx() {
   const [transactions, setTransactions] = useState([]);
@@ -39,7 +40,8 @@ export default function MyTranx() {
     }
   };
   if (loading) {
-    return <div className="text-center p-10">Loading transactions...</div>;
+    // return <div className="text-center p-10">Loading transactions...</div>;
+    return <LoadingSpinner />;
   }
   if (error) {
     return <div className="text-center p-10 text-red-500">{error}</div>;

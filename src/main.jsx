@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage';
 
 import AuthProvider from './context/AuthProvider';
 import RegisterPage from './pages/RegisterPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 import MyTranx from './components/MyTranx';
 import AddTranx from './components/AddTranx';
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
       { path: "/profile", element: <PrivateRoute><Profile></Profile></PrivateRoute> },
       { path: "/transaction/:id", element: <PrivateRoute><DetailsTranx /></PrivateRoute> },
       { path: "/transaction/update/:id", element: <PrivateRoute><UpdateTranx /></PrivateRoute> },
+      { path: "*", element: <NotFoundPage /> },
     ]
   },
 ]);

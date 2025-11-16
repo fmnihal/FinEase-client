@@ -107,7 +107,10 @@ export default function AddTranx() {
         {error && <p className="text-red-500 text-center">{error}</p>}
 
         <button type="submit" disabled={loading} className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 disabled:bg-gray-400">
-          {loading ? 'Adding...' : 'Add Transaction'}
+          {loading ? 
+          // 'Adding...'
+          <LoadingSpinner />
+          : 'Add Transaction'}
         </button>
       </form>
     </div>
