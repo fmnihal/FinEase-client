@@ -23,7 +23,8 @@ import UpdateTranx from './components/UpdateTranx';
 import Goals from './components/Goals';
 import HomePage from './pages/HomePage';
 import Reports from './components/Reports';
-import Profile from './components/Profile';
+// import Profile from './components/Profile';
+import ProfilePage from './pages/ProfilePage';
 
 
 const router = createBrowserRouter([
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       { path: "/add-transaction", element: <PrivateRoute><AddTranx></AddTranx></PrivateRoute> },
       { path: "/goals", element: <PrivateRoute><Goals></Goals></PrivateRoute> },
       { path: "/reports", element: <PrivateRoute><Reports></Reports></PrivateRoute> },
-      { path: "/profile", element: <PrivateRoute><Profile></Profile></PrivateRoute> },
+      { path: "/profile", element: <PrivateRoute><ProfilePage></ProfilePage></PrivateRoute> },
       { path: "/transaction/:id", element: <PrivateRoute><DetailsTranx /></PrivateRoute> },
       { path: "/transaction/update/:id", element: <PrivateRoute><UpdateTranx /></PrivateRoute> },
       { path: "*", element: <NotFoundPage /> },

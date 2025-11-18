@@ -50,10 +50,11 @@ export default function Header() {
                 <NavLinkItem to="/add-transaction">Add Transaction</NavLinkItem>
                 <NavLinkItem to="/reports">Reports</NavLinkItem>
                 {/* <NavLinkItem to="/settings">Settings</NavLinkItem> */}
-                <NavLinkItem to="/profile"><UserRoundPen size={30} /></NavLinkItem>
+                {/* <NavLinkItem to="/profile"><UserRoundPen size={30} /></NavLinkItem> */}
               </ul>
               <div className="flex items-center space-x-3">
                 {/* <span className="text-sm text-gray-600 flex gap-2 items-center"><UserRoundPen size={30} /> Hi, {user.displayName || user.email.split('@')[0]}</span> */}
+                <Link to="/profile" className="text-sm text-gray-600 flex gap-2 items-center p-2 rounded-lg hover:bg-gray-100" title="View Profile"><UserRoundPen size={30} /> Hi, {user.displayName || user.email.split('@')[0]}</Link>
                 <button onClick={handleLogout} className="bg-red-500 text-white font-bold p-2 rounded-full hover:bg-red-600 hover:cursor-pointer transition duration-300" title="Logout"><LogOut className="h-5 w-5" /></button>
               </div>
             </>
