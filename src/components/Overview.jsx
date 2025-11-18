@@ -39,7 +39,7 @@ export default function Overview() {
   }, [transactions]);
   if (loading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
         <OverviewCard title="Loading..." value="..." icon={<Wallet />} />
         <OverviewCard title="Loading..." value="..." icon={<TrendingUp />} />
         <OverviewCard title="Loading..." value="..." icon={<TrendingDown />} />
@@ -47,7 +47,7 @@ export default function Overview() {
     );
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
       <OverviewCard title="Total Balance" value={`$${balance.toFixed(2)}`} icon={<Wallet className="text-blue-500" />} color="blue" />
       <OverviewCard title="Total Income" value={`$${totalIncome.toFixed(2)}`} icon={<TrendingUp className="text-green-500" />} color="green" />
       <OverviewCard title="Total Expense" value={`$${totalExpense.toFixed(2)}`} icon={<TrendingDown className="text-red-500" />} color="red" />

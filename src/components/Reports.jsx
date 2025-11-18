@@ -24,13 +24,13 @@ export default function Reports() {
       
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Financial Reports</h1>
-        <button onClick={handleExport} className="flex items-center gap-2 bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800"><Download className="h-5 w-5" />Export</button>
+        <button onClick={handleExport} className="flex items-center gap-2 bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 hover:cursor-pointer"><Download className="h-5 w-5" />Export</button>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        <button className="flex items-center gap-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border"><Calendar className="h-4 w-4" /> This Month</button>
-        <button className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border hover:bg-gray-50">Last 3 Months</button>
-        <button className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border hover:bg-gray-50">Year to Date</button>
+        <button className="flex items-center gap-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border hover:cursor-pointer"><Calendar className="h-4 w-4" /> This Month</button>
+        <button className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border hover:bg-gray-50 hover:cursor-pointer">Last 3 Months</button>
+        <button className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow-sm border hover:bg-gray-50 hover:cursor-pointer">Year to Date</button>
       </div>
 
       <div className="flex border-b-2 border-gray-200 mb-6">
@@ -43,7 +43,7 @@ export default function Reports() {
           onClick={() => setActiveTab('income-expense')} 
         />
         <TabButton title="Net Worth Trend" 
-          isActive={activeTab === 'trend'} 
+          isActive={activeTab === 'trend'}
           onClick={() => setActiveTab('trend')} 
         />
         <TabButton title="Cash Flow"

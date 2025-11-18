@@ -68,9 +68,9 @@ export default function Header() {
         <div className="lg:hidden">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-700 hover:text-teal-600">
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 hover:cursor-pointer" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 hover:cursor-pointer" />
             )}
           </button>
         </div>
@@ -86,7 +86,8 @@ export default function Header() {
               <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
               <NavLinkItem to="/add-transaction">Add Transaction</NavLinkItem>
               <NavLinkItem to="/reports">Reports</NavLinkItem>
-              <NavLinkItem to="/profile">Profile</NavLinkItem>
+              {/* <NavLinkItem to="/profile">Profile</NavLinkItem> */}
+              <Link to="/profile" className="text-[16px] text-gray-600 flex gap-2 items-center p-2 rounded-lg hover:bg-gray-100" title="View Profile"><UserRoundPen size={30} /> Hi, {user.displayName || user.email.split('@')[0]}</Link>
               <li>
                 <button onClick={() => {
                     handleLogout();
