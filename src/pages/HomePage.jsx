@@ -11,7 +11,7 @@ import FinancialPlanningMatters from '../components/FinancialPlanningMatters';
 
 const HomePage = () => {
     return (
-        <div className='w-10/12 mx-auto my-15'>
+        <div className='w-10/12 mx-auto my-16'>
             <DashBanner></DashBanner>
             <Overview />
             {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 space-y-10">
@@ -20,12 +20,12 @@ const HomePage = () => {
                 <Budget />
                 <Goals />
             </div> */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-15">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-16">
                 <BudgetingTips />
                 <FinancialPlanningMatters />
             </div>
             <div>
-                <h2 className="text-3xl font-semibold mb-4">Recent Transactions</h2><hr />
+                <h2 className="text-3xl font-semibold my-15">Recent Transactions</h2><hr />
                 <MyTranx /> 
             </div>
         </div>

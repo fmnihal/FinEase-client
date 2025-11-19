@@ -1,16 +1,16 @@
-@import "tailwindcss";
-@plugin "daisyui";
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-white text-gray-900 transition-colors duration-300;
+  html, body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-300;
   }
-  .dark body {
-    @apply bg-gray-950 text-gray-100;
+  html.dark, 
+  html.dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+  body {
+    @apply min-h-screen;
   }
 }

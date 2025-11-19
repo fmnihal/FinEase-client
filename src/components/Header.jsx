@@ -31,12 +31,19 @@ export default function Header() {
   );
   const NavLinkItem = ({ to, children }) => (
     <li>
-      <NavLink to={to} onClick={closeMobileMenu} className={({ isActive }) =>
-          `block py-2 px-3 rounded ${
-            isActive ? 'bg-teal-600 text-white' : 'text-gray-700 hover:bg-gray-100'
-          } lg:bg-transparent lg:text-gray-700 lg:p-0 lg:hover:text-teal-600`
+      <NavLink 
+        to={to} 
+        onClick={closeMobileMenu} 
+        className={({ isActive }) =>
+          `block py-2 px-3 rounded-lg transition-colors ${
+            isActive
+              ? 'bg-teal-600 text-white'
+              : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-teal-600 dark:hover:text-teal-400'
+          } lg:bg-transparent lg:p-0 lg:hover:bg-transparent`
         }
-      >{children}</NavLink>
+      >
+        {children}
+      </NavLink>
     </li>
   );
 
@@ -117,7 +124,7 @@ export default function Header() {
 
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b dark:border-gray-800">
+    <header className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b dark:border-gray-800">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* --- LOGO --- */}
@@ -134,8 +141,8 @@ export default function Header() {
             <>
               <ul className="flex space-x-8 font-medium text-gray-600 dark:text-gray-300">
                 <NavLinkItem to="/home">Home</NavLinkItem>
-                <NavLinkItem to="/my-transactions">Transactions</NavLinkItem>
-                <NavLinkItem to="/add-transaction">Add New</NavLinkItem>
+                <NavLinkItem to="/my-transactions">My Transactions</NavLinkItem>
+                <NavLinkItem to="/add-transaction">Add Transaction</NavLinkItem>
                 <NavLinkItem to="/reports">Reports</NavLinkItem>
               </ul>
 
@@ -150,7 +157,7 @@ export default function Header() {
                   title="View Profile"
                 >
                   <UserRoundPen size={20} /> 
-                  <span className="max-w-[100px] truncate">{user.displayName || 'User'}</span>
+                  <span className="whitespace-nowrap">{user.displayName || 'User'}</span>
                 </Link>
                 
                 <button 
@@ -208,7 +215,7 @@ export default function Header() {
                   className="flex items-center gap-3 text-gray-700 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <UserRoundPen size={20} /> 
-                  <span className="font-medium">Profile ({user.displayName || 'User'})</span>
+                  <span className="whitespace-nowrap">Profile ({user.displayName || 'User'})</span>
                 </Link>
                 
                 <button 
