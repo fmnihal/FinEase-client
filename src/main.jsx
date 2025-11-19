@@ -13,6 +13,7 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 
 import AuthProvider from './context/AuthProvider';
+import { ThemeProvider } from './context/ThemeProvider';
 import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -52,7 +53,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </AuthProvider>
   </StrictMode>,
 )

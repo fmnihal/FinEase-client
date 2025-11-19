@@ -59,7 +59,7 @@ export default function MyTranx() {
           <p className="text-gray-500 col-span-full text-center">No transactions found. Click "Add New" to get started.</p>
         ) : (
           transactions.map(t => (
-            <div key={t._id} className="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+            <div key={t._id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between">
               <div>
                 <div className="flex justify-between items-start mb-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-semibold

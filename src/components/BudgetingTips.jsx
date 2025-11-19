@@ -3,7 +3,7 @@ import { Lightbulb } from 'lucide-react';
 
 export default function BudgetingTips() {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <div className="flex items-center gap-1 mb-4">
         <Lightbulb />
         <h3 className="text-3xl font-semibold text-gray-800">Budgeting Tips</h3>
